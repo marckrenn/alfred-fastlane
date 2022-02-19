@@ -1,5 +1,7 @@
 # alfred-fastlane
 
+Select and execute Fastlane lanes directly from Alfred
+
 ## Usage
 
 ### 1️⃣ Cache lanes first (required once per Fastlane project):
