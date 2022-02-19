@@ -1615,7 +1615,7 @@ echo -n $1</string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Change settings of Fastlane workflow</string>
+				<string>Fastlane workflow settings</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -2130,7 +2130,7 @@ The default project path can either be set
 	<key>variables</key>
 	<dict>
 		<key>defaultPath</key>
-		<string>/Users/marckrenn/Documents/projects/appsolution-ios</string>
+		<string></string>
 		<key>keyword</key>
 		<string>fl</string>
 	</dict>
@@ -2139,7 +2139,7 @@ The default project path can either be set
 		<string>defaultPath</string>
 	</array>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.1.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/marckrenn/alfred-fastlane</string>
 </dict>
