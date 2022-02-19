@@ -1764,33 +1764,43 @@ echo -n $1</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Caching (required once for every Fastlane project):
-1) Toggle Alfred, type 'fl'
-3) 'Select Fastlane project path' ↩︎
+	<string># alfred-fastlane
+
+## Usage
+
+### 1️⃣ Cache lanes first (required once per Fastlane project):
+1) `Toggle Alfred`, type `fl`
+3) `Select Fastlane project path` ↩︎
 4) Select path ↩︎
-5) 'Cache lanes for …' ↩︎
+5) `Cache lanes for …` ↩︎
 6) A Terminal window will open. After caching is done, you can close the window
 
-Usage:
-Repeat steps 1-4
-5) Select and execute lane with ↩︎
+### 2️⃣ Select and execute lanes:
+Repeat steps 1-4 from above
+* Select and execute lane with ↩︎
 
-With a lane selected, …
-• hold ⌘ to toggle from 'bundle exec fastlane [selected lane]' to 'fastlane [selected lane]'
-• hold ⌥ to add arguments to 'bundle exec fastlane [selected lane]'
-• hold ⇧ to add arguments to 'fastlane [selected lane]'
+#### With a lane selected, …
+* hold ⌘ to toggle from `bundle exec fastlane [selected lane]` to `fastlane [selected lane]`
+* hold ⌥ to add arguments to `bundle exec fastlane [selected lane]`
+* hold ⇧ to add arguments to `fastlane [selected lane]`
 
-Pro tip:
-If you primarily use a particular Fastlane project, it's HIGHLY RECOMMENDED to set it as the default project path! The default project path can either be set in the settings (type 'fl set') or by repeating steps 1-4 and then selecting 'Set [folder] as default project path' ↩︎
+## PRO TIP:
+If you primarily use a particular Fastlane project, it's **highly recommended** to set it as the default project path!
 
-This workflow utilizes:
-• alfred-fuzzy (https://github.com/deanishe/alfred-fuzzy) by Dean Jackson 
-• alfred-workflow (https://github.com/deanishe/alfred-workflow) by Dean Jackson
-• Bootleg Fastlane logo by Marc Krenn
+The default project path can either be set
+* in the settings (type `fl set`) or
+* by repeating steps 1-4 from above and then selecting `Set [folder] as default project path` ↩︎
 
-Fastlane © Google, Inc. All Rights Reserved
+## This workflow utilizes:
+* alfred-fuzzy (https://github.com/deanishe/alfred-fuzzy) by Dean Jackson 
+* alfred-workflow (https://github.com/deanishe/alfred-workflow) by Dean Jackson
+* Bootleg Fastlane logo by Marc Krenn
 
-This workflow is in no way endorsed, supported by or otherwise legally connected to Google, Inc.</string>
+---
+
+*Fastlane © Google, Inc. All Rights Reserved*
+
+**This project is in no way endorsed, supported by or otherwise legally connected to Google, Inc.**</string>
 	<key>uidata</key>
 	<dict>
 		<key>0600A1EE-A18D-4586-BDCE-D732A34CA4E0</key>
