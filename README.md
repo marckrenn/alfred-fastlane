@@ -40,8 +40,8 @@ The default project path can either be set
 * by repeating steps 1-4 from above and then selecting `Set [folder] as default project path` ↩︎
 
 ## This workflow utilizes:
-* alfred-fuzzy (https://github.com/deanishe/alfred-fuzzy) by Dean Jackson 
-* alfred-workflow (https://github.com/deanishe/alfred-workflow) by Dean Jackson
+* [alfred-fuzzy](https://github.com/deanishe/alfred-fuzzy) by Dean Jackson 
+* [alfred-workflow](https://github.com/deanishe/alfred-workflow) by Dean Jackson
 * Bootleg Fastlane logo by Marc Krenn
 
 ---
