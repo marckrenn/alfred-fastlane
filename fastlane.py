@@ -31,6 +31,12 @@ def main(wf):
 	hash = hashlib.md5(path).hexdigest()
 	name = os.path.basename(os.path.normpath(path))
 
+	if wf.update_available:
+	    wf.add_item(title='Update Fastlane workflow',
+	                subtitle='Action this item to install the update',
+	                autocomplete='workflow:update',
+					valid=False)
+
 	if path != '':
 
 		# Check if lanes were already cached for selected path
@@ -115,5 +121,7 @@ def main(wf):
 	wf.send_feedback()
 
 if __name__ == u"__main__":
-	wf = Workflow3()
+	wf = Workflow3(update_settings={
+    'github_slug': 'marckrenn/alfred-fastlane',
+    'frequency': 1})
 	sys.exit(wf.run(main))
