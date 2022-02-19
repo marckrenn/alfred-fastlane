@@ -6,6 +6,11 @@
 
 Select and execute Fastlane lanes directly from Alfred
 
+* ✅ Supports remote lanes + args
+* ✅ Fuzzy matching
+* ✅ Default project path
+* ✅ In-Alfred settings flow
+
 https://user-images.githubusercontent.com/2648540/154819854-a76d8b81-644e-4e86-a662-fff7230281b1.mov
 
 ## Usage
