@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/icon.png" />
+  <img src="https://user-images.githubusercontent.com/2648540/154820921-12facc43-6bd0-4658-abb2-b76078e3eb93.png" width="300" height="300" />
 </p>
 
 # alfred-fastlane
