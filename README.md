@@ -8,6 +8,7 @@ Select and execute Fastlane lanes directly from Alfred
 
 * ✅ Supports remote lanes + args
 * ✅ Fuzzy matching
+* ✅ Detects frontmost Xcode project
 * ✅ Default project path
 * ✅ In-Alfred settings flow
 
