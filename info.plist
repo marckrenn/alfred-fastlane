@@ -757,7 +757,7 @@ echo -n "Done caching lanes, terminal window can be closed"</string>
 						<key>matchstring</key>
 						<string>_cache_bundle_exec</string>
 						<key>outputlabel</key>
-						<string>cache lanes (via bundle exec)</string>
+						<string>cache remote lanes (via bundle exec)</string>
 						<key>uid</key>
 						<string>278AC786-47B0-4771-AD78-59EFA592EE9A</string>
 					</dict>
@@ -771,7 +771,7 @@ echo -n "Done caching lanes, terminal window can be closed"</string>
 						<key>matchstring</key>
 						<string>_cache_fastlane</string>
 						<key>outputlabel</key>
-						<string>cache lanes (via fastlane)</string>
+						<string>cache remote lanes (via fastlane)</string>
 						<key>uid</key>
 						<string>DBED3647-3733-4E61-9C5C-FABAA6FD4311</string>
 					</dict>
@@ -830,7 +830,8 @@ echo -n "Done caching lanes, terminal window can be closed"</string>
 				<key>script</key>
 				<string>export query="$1"
 focused=$(osascript ./xcodeFocused.scpt)
-./fuzzy.py /usr/bin/python ./fastlane.py $path ${focused}</string>
+./fuzzy.py /usr/bin/python ./fastlane.py $path ${focused}
+</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1042,11 +1043,11 @@ focused=$(osascript ./xcodeFocused.scpt)
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>49</integer>
+				<integer>31</integer>
 				<key>hotmod</key>
-				<integer>786432</integer>
+				<integer>1441792</integer>
 				<key>hotstring</key>
-				<string>Space</string>
+				<string>O</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1091,22 +1092,6 @@ focused=$(osascript ./xcodeFocused.scpt)
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>cd '{var:path}'
-{var:split2} {query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
-			<key>uid</key>
-			<string>82C51630-5D1A-4B7D-8F2D-0FA15F9B4724</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>subtext</key>
@@ -1120,6 +1105,22 @@ focused=$(osascript ./xcodeFocused.scpt)
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>E45702B0-2AD7-4974-A69F-A22D8E0D4A3D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>cd '{var:path}'
+{var:split2} {query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>82C51630-5D1A-4B7D-8F2D-0FA15F9B4724</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1369,27 +1370,6 @@ focused=$(osascript ./xcodeFocused.scpt)
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Default project path set to {query}</string>
-				<key>title</key>
-				<string>Fastlane Workflow</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>19714603-63C9-479D-986F-606FD3854CA1</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1410,6 +1390,27 @@ echo -n $1</string>
 			<string>3165FB67-5180-4F45-90B9-C4ED6A0C3FC8</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Default project path set to {query}</string>
+				<key>title</key>
+				<string>Fastlane Workflow</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>19714603-63C9-479D-986F-606FD3854CA1</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1774,6 +1775,27 @@ echo -n $1</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Fastlane keyword set to '{query}'</string>
+				<key>title</key>
+				<string>Fastlane Workflow</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D99BAE93-5FDC-499D-97E9-B29C9749BFBC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1794,27 +1816,6 @@ echo -n $1</string>
 			<string>84C88AB6-8CA5-4E41-AFF2-72DF3CB227F0</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Fastlane keyword set to '{query}'</string>
-				<key>title</key>
-				<string>Fastlane Workflow</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>D99BAE93-5FDC-499D-97E9-B29C9749BFBC</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2247,7 +2248,7 @@ echo -n $1</string>
 	<key>variables</key>
 	<dict>
 		<key>defaultPath</key>
-		<string>/Users/marckrenn/Documents/projects/alfies-ios</string>
+		<string></string>
 		<key>keyword</key>
 		<string>fl</string>
 	</dict>
@@ -2256,7 +2257,7 @@ echo -n $1</string>
 		<string>defaultPath</string>
 	</array>
 	<key>version</key>
-	<string>1.2.0</string>
+	<string>1.3.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/marckrenn/alfred-fastlane</string>
 </dict>

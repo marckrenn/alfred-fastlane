@@ -12,6 +12,9 @@ def clean(string):
 	clean = illegal_xml_re.sub('', string)
 	return clean
 
+def get_platform(line):
+	return re.search('platform :(.*) do', line)
+
 def main(wf):
 
 	cache_path = os.getenv('alfred_workflow_cache')
@@ -30,6 +33,9 @@ def main(wf):
 
 	hash = hashlib.md5(path).hexdigest()
 	name = os.path.basename(os.path.normpath(path))
+	path_copy = path
+	sub_paths = [path + '/fastfile', path + '/fastlane/fastfile']
+	lanes = []
 
 	if wf.update_available:
 	    wf.add_item(title='Update Fastlane workflow',
@@ -37,86 +43,164 @@ def main(wf):
 	                autocomplete='workflow:update',
 					valid=False)
 
-	if path != '':
+	for path in sub_paths:
+		if os.path.isfile(path):
 
-		# Check if lanes were already cached for selected path
-		if os.path.isfile(cache_path + '/projects/' + hash) is False: # f py string interpolation
+			platform = ""
 
-			# Check if selected path contains a fastlane-folder
-			if os.path.isdir(path + '/fastlane'):
+			with open(path) as myfile:
+				for line in myfile.readlines():
 
-				i = wf.add_item(title="Cache lanes for '" + name + "'",
-							subtitle='bundle exec fastlane lanes',
+					# Platform prefix
+					if get_platform(line) is not None:
+						platform = get_platform(line).group(1)
+
+					result = re.search('(?<!_)lane :(.*) do', line)
+
+					if result is not None:
+						lane = result.group(1)
+
+						if platform == "":
+							lanes.append(lane)
+						else:
+							lanes.append(platform + ' ' + lane)
+
+	if path_copy != '':
+
+		# Check if selected path contains fastlane folder
+		if os.path.isdir(path_copy + '/fastlane'):
+
+			# Get cached lanes
+			if os.path.isfile(cache_path + '/projects/' + hash) is True:
+
+				# Is cached
+				if path_copy != default_path:
+
+					# Is not default
+					i = wf.add_item(title="'" + name + "' lanes:",
+								subtitle='Set as default | Hold ⌘ or ⇧ to re-cache remote lanes',
+								arg='_defaultPath,' + path_copy,
+								valid=True)
+
+					i.add_modifier('cmd',
+							subtitle='Re-cache remote lanes (via bundle exec fastlane lanes)',
 							arg='_cache_bundle_exec',
 							valid=True)
 
-				i.add_modifier('cmd',
-						subtitle='fastlane lanes',
-						arg='_cache_fastlane',
-						valid=True)
+					i.add_modifier('shift',
+							subtitle='Re-cache remote lanes (via fastlane lanes)',
+							arg='_cache_fastlane',
+							valid=True)
 
-				wf.send_feedback()
-				return
+					i.add_modifier('alt',
+							subtitle=path_copy,
+							valid=False)
+
+				else:
+					# Is default
+					i = wf.add_item(title="'" + name + "' lanes:",
+								subtitle='Hold ⌘ or ⇧ to re-cache remote lanes',
+								valid=False)
+
+					i.add_modifier('cmd',
+							subtitle='Re-cache remote lanes (via bundle exec fastlane lanes)',
+							arg='_cache_bundle_exec',
+							valid=True)
+
+					i.add_modifier('shift',
+							subtitle='Re-cache remote lanes (via fastlane lanes)',
+							arg='_cache_fastlane',
+							valid=True)
+
+					i.add_modifier('alt',
+							subtitle=path_copy,
+							valid=False)
+
+				with open(cache_path + '/projects/' + hash) as cached_lanes_file:
+
+					for line in cached_lanes_file.readlines():
+
+						result = re.search('----- fastlane (.*)\[', line)
+
+						if result is not None:
+
+							lane = clean(result.group(1))
+							lanes.append(lane)
 
 			else:
 
-				wf.add_item(title="'" + name + " doesn't contain a '/fastlane' folder",
-							subtitle='Init Fastlane first (goto https://docs.fastlane.tools/)',
-							arg='_init',
+				# Is cached
+				if path_copy != default_path:
+
+					# Is not default
+					i = wf.add_item(title="'" + name + "' lanes:",
+								subtitle='Set as default | Hold ⌘ or ⇧ to cache remote lanes',
+								arg='_defaultPath,' + path_copy,
+								valid=True)
+
+					i.add_modifier('cmd',
+							subtitle='Cache remote lanes (via bundle exec fastlane lanes)',
+							arg='_cache_bundle_exec',
 							valid=True)
 
-				wf.send_feedback()
-				return
+					i.add_modifier('shift',
+							subtitle='Cache remote lanes (via fastlane lanes)',
+							arg='_cache_fastlane',
+							valid=True)
 
-	else:
-		return
+					i.add_modifier('alt',
+							subtitle=path_copy,
+							valid=False)
 
-	# Display available lanes
-	with open(cache_path + '/projects/' + hash) as cached_fastlanes_file:
+				else:
+					# Is default
+					i = wf.add_item(title="'" + name + "' lanes:",
+								subtitle='Hold ⌘ or ⇧ to cache remote lanes',
+								valid=False)
 
-		if path != default_path:
-			wf.add_item(title="Set '" + name + "' as default project path",
-					subtitle='current: ' + default_path,
-					arg='_defaultPath,' + path,
-					valid=True)
+					i.add_modifier('cmd',
+							subtitle='Cache remote lanes (via bundle exec fastlane lanes)',
+							arg='_cache_bundle_exec',
+							valid=True)
 
-		i = wf.add_item(title="Available lanes for '" + name + "':",
-					subtitle='Select to re-cache lanes (via bundle exec fastlane lanes)',
-					arg='_cache_bundle_exec',
+					i.add_modifier('shift',
+							subtitle='Cache remote lanes (via fastlane lanes)',
+							arg='_cache_fastlane',
+							valid=True)
+
+					i.add_modifier('alt',
+							subtitle=path_copy,
+							valid=False)
+
+		else:
+
+			wf.add_item(title="'" + name + "' doesn't contain a '/fastlane' folder",
+						subtitle='Init Fastlane first (goto https://docs.fastlane.tools/)',
+						arg='_init',
+						valid=True)
+
+	# Output lanes
+	for lane in list(dict.fromkeys(lanes)):
+
+		i = wf.add_item(title=lane,
+					subtitle='bundle exec fastlane ' + lane,
+					arg='bundle exec fastlane ' + lane,
 					valid=True)
 
 		i.add_modifier('cmd',
-				subtitle='Select to re-cache lanes (via fastlane lanes)',
-				arg='_cache_fastlane',
-				valid=True)
+					subtitle='fastlane ' + lane,
+					arg='fastlane ' + lane,
+					valid=True)
 
-		for line in cached_fastlanes_file.readlines():
+		i.add_modifier('alt',
+					subtitle='bundle exec fastlane ' + lane + ' (select to set args)',
+					arg='_withArgs, bundle exec fastlane ' + lane,
+					valid=True)
 
-			result = re.search('----- fastlane (.*)\[', line)
-
-			if result is not None:
-
-				lane = clean(result.group(1))
-
-				i = wf.add_item(title=lane,
-							subtitle='bundle exec fastlane ' + lane,
-							arg='bundle exec fastlane ' + lane,
-							valid=True)
-
-				i.add_modifier('cmd',
-							subtitle='fastlane ' + lane,
-							arg='fastlane ' + lane,
-							valid=True)
-
-				i.add_modifier('alt',
-							subtitle='bundle exec fastlane ' + lane + ' (select to set args)',
-							arg='_withArgs, bundle exec fastlane ' + lane,
-							valid=True)
-
-				i.add_modifier('shift',
-							subtitle='fastlane ' + lane + ' (select to set args)',
-							arg='_withArgs, fastlane ' + lane,
-							valid=True)
+		i.add_modifier('shift',
+					subtitle='fastlane ' + lane + ' (select to set args)',
+					arg='_withArgs, fastlane ' + lane,
+					valid=True)
 
 	wf.send_feedback()
 
