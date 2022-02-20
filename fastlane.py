@@ -20,7 +20,7 @@ def main(wf):
 
 	# Determine if this script was 'entered' via File Filter or with set defaultPath
 	if len(sys.argv) > 1:
-		# File Filter
+		# File Filter or xcode magic
 		path = sys.argv[1].decode('utf-8')
 	else:
 		# defaultPath
