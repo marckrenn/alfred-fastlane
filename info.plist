@@ -1073,7 +1073,10 @@ focused=$(osascript ./xcodeFocused.scpt)
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>tell application id "com.apple.dt.Xcode"	set filePath to (get path of front document)	tell application "System Events" to set parentFolder to POSIX path of (container of disk item filePath)end tell</string>
+				<string>tell application id "com.apple.dt.Xcode"
+	set filePath to (get path of front document)
+	tell application "System Events" to set parentFolder to POSIX path of (container of disk item filePath)
+end tell</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -2247,7 +2250,7 @@ echo -n $1</string>
 	<key>variables</key>
 	<dict>
 		<key>defaultPath</key>
-		<string>/Users/marckrenn/Documents/projects/alfies-ios</string>
+		<string></string>
 		<key>keyword</key>
 		<string>fl</string>
 	</dict>
