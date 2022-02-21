@@ -1,10 +1,10 @@
- 
-  <table>
+ <table>
     <tr>
-      <td valign="center"><img src="icon.png" width="128" height="128" /></td>
-      <td valign="center"><h1> alfred-fastlane </h1></td>
+      <td> <img src="icon.png" width="128" alt="fastlane Logo" /> </td>
+      <td valign="center"> <h1> alfred-fastlane </h1> </td>
     </tr>
 </table>
+
 
 Search and execute Fastlane lanes directly from Alfred
 
