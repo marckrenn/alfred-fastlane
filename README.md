@@ -21,7 +21,7 @@
 * While selecting a lane, hold `⌘` to toggle between `bundle exec fastlane [lane]` and `fastlane [lane]`
 * Hold `⌥` or `⇧` to execute selected lane with arguments
 * Lanes contained within the `default path` will be shown right after typing `fl`, without having to select the folder first
-* `default path` can either be set via `fl set` or by `'[selected lane]' lanes:` `↩︎`
+* `default path` can either be set via `fl set` or by `'[selected path]' lanes:` `↩︎`
 * With a Xcode project open, the corresponding project path will be used as `default path` (alternatively, press `⌘`+`⇧`+`⌃`+`o` while focusing Xcode)
 
 ## Acknowledgements:
