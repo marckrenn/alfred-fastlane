@@ -80,7 +80,7 @@ def main(wf):
 
 					# Is not default
 					i = wf.add_item(title="'" + name + "' lanes:",
-								subtitle='Set as default   |   ⌘ / ⇧ to re-cache remote lanes   |   ⌥ to open Fastfile',
+								subtitle='Set as default ↩︎ • Re-cache remote lanes ⌘ / ⇧ • Open Fastfile ⌥ • Show path ⌃',
 								arg='_defaultPath,' + path_copy,
 								valid=True)
 
@@ -106,7 +106,7 @@ def main(wf):
 				else:
 					# Is default
 					i = wf.add_item(title="'" + name + "' lanes:",
-								subtitle='Is default path   |   ⌘ / ⇧ to re-cache remote lanes   |   ⌥ to open Fastfile',
+								subtitle='Default path ✔ • Re-cache remote lanes ⌘ / ⇧ • Open Fastfile ⌥ • Show path ⌃',
 								valid=False)
 
 					i.add_modifier('cmd',
@@ -146,7 +146,7 @@ def main(wf):
 
 					# Is not default
 					i = wf.add_item(title="'" + name + "' lanes:",
-								subtitle='Set as default   |   ⌘ / ⇧ to cache remote lanes   |   ⌥ to open Fastfile',
+								subtitle='Set as default ↩︎ • Cache remote lanes ⌘ / ⇧ • Open Fastfile ⌥ • Show path ⌃',
 								arg='_defaultPath,' + path_copy,
 								valid=True)
 
@@ -172,7 +172,7 @@ def main(wf):
 				else:
 					# Is default
 					i = wf.add_item(title="'" + name + "' lanes:",
-								subtitle='Is default path   |   ⌘ / ⇧ to cache remote lanes   |   ⌥ to open Fastfile',
+								subtitle='Default path ✔ • Cache remote lanes ⌘ / ⇧ • Open Fastfile ⌥ • Show path ⌃',
 								valid=False)
 
 					i.add_modifier('cmd',
@@ -205,23 +205,23 @@ def main(wf):
 	for lane in list(dict.fromkeys(lanes)):
 
 		i = wf.add_item(title=lane,
-					subtitle='bundle exec fastlane ' + lane,
+					subtitle='/' + name + '   bundle exec fastlane ' + lane,
 					arg='bundle exec fastlane ' + lane,
 					valid=True)
 
 		i.add_modifier('cmd',
-					subtitle='fastlane ' + lane,
+					subtitle='/' + name + '   fastlane ' + lane,
 					arg='fastlane ' + lane,
 					valid=True)
 
 		i.add_modifier('alt',
-					subtitle='bundle exec fastlane ' + lane + ' (select to set args)',
-					arg='_withArgs, bundle exec fastlane ' + lane,
+					subtitle='/' + name + '   bundle exec fastlane ' + lane + ' [Add parameters]',
+					arg='_withParameters, bundle exec fastlane ' + lane,
 					valid=True)
 
 		i.add_modifier('shift',
-					subtitle='fastlane ' + lane + ' (select to set args)',
-					arg='_withArgs, fastlane ' + lane,
+					subtitle='/' + name + '   fastlane ' + lane + ' [Add parameters]',
+					arg='_withParameters, fastlane ' + lane,
 					valid=True)
 
 	wf.send_feedback()
