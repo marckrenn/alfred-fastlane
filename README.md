@@ -6,26 +6,28 @@
 </table>
 
 
-## Search and execute Fastlane lanes directly from Alfred
+## Search, select and execute Fastlane lanes directly from Alfred
 
 ### Features
-* ✅ Fuzzy matching
-* ✅ Automatically detects frontmost Xcode project
-* ✅ Default project path
+* ✅ Dynamically scrapes Fastfile
 * ✅ Optional caching for remote lanes
-* ✅ Supports arguments
+* ✅ Automatically detects open Xcode project
+* ✅ Default project path
+* ✅ Fuzzy matching
+* ✅ Supports parameters
 * ✅ In-Alfred settings flow
 
 ### Usage
-* `Toggle Alfred` → type `fl` → select a path containing a Fastlane folder → `↩︎`
-* While selecting a lane, hold `⌘` to toggle between `bundle exec fastlane [lane]` and `fastlane [lane]`
-* Hold `⌥` or `⇧` to execute selected lane with arguments
-* Lanes contained within the `default path` will be shown right after typing `fl`, without having to select the folder first
-* `default path` can either be set via `fl set` or by `'[selected lane]' lanes:` `↩︎`
-* With a Xcode project open, the corresponding project path will be used as `default path` (alternatively, press `⌘`+`⇧`+`⌃`+`o` while focusing Xcode)
+* `Toggle Alfred` → type `fl` → select path containing Fastlane folder `↩︎`
+* With lane selected, hold `⌘` to toggle between `bundle exec fastlane [lane]` and `fastlane [lane]`
+* Hold `⌥` or `⇧` to pass parameters to selected lane
+* Lanes contained within the `default path` will be shown right after typing `fl`
+* `default path` can either be set via `fl set` or by `'[selected path]' lanes:` `↩︎`
+* The frontmost open Xcode project is automatically used as `default path` (alternatively, press `⌃⇧⌘O` in Xcode)
 
 ## Acknowledgements:
 
+* [Fastlane](https://github.com/fastlane/fastlane) by [Fastlane team](https://github.com/fastlane/fastlane#fastlane-team) & especially [Felix Krause](https://twitter.com/KrauseFx)
 * [alfred-fuzzy](https://github.com/deanishe/alfred-fuzzy) by Dean Jackson 
 * [alfred-workflow](https://github.com/deanishe/alfred-workflow) by Dean Jackson
 
