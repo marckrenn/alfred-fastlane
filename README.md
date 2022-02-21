@@ -5,8 +5,11 @@
     </tr>
 </table>
 
-
 ## Search, select and execute Fastlane lanes directly from Alfred
+
+
+https://user-images.githubusercontent.com/2648540/155036474-2534e50a-7afb-474a-8d41-0b13bdab1207.mp4
+
 
 ### Features
 * ✅ Dynamically scrapes Fastfile
