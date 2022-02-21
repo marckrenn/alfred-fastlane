@@ -36,6 +36,7 @@ def main(wf):
 	path_copy = path
 	sub_paths = [path + '/fastfile', path + '/fastlane/fastfile']
 	lanes = []
+	fastfile_path = ""
 
 	if wf.update_available:
 	    wf.add_item(title='Update Fastlane workflow',
@@ -46,6 +47,7 @@ def main(wf):
 	for path in sub_paths:
 		if os.path.isfile(path):
 
+			fastfile_path = path
 			platform = ""
 
 			with open(path) as myfile:
@@ -78,7 +80,7 @@ def main(wf):
 
 					# Is not default
 					i = wf.add_item(title="'" + name + "' lanes:",
-								subtitle='Set as default | Hold ⌘ or ⇧ to re-cache remote lanes',
+								subtitle='Set as default   |   ⌘ / ⇧ to re-cache remote lanes   |   ⌥ to open Fastfile',
 								arg='_defaultPath,' + path_copy,
 								valid=True)
 
@@ -92,14 +94,19 @@ def main(wf):
 							arg='_cache_fastlane',
 							valid=True)
 
-					i.add_modifier('alt',
+					i.add_modifier('ctrl',
 							subtitle=path_copy,
 							valid=False)
+
+					i.add_modifier('alt',
+							subtitle='Open Fastfile',
+							arg='_open_fastfile, ' + fastfile_path,
+							valid=True)
 
 				else:
 					# Is default
 					i = wf.add_item(title="'" + name + "' lanes:",
-								subtitle='Hold ⌘ or ⇧ to re-cache remote lanes',
+								subtitle='Is default path   |   ⌘ / ⇧ to re-cache remote lanes   |   ⌥ to open Fastfile',
 								valid=False)
 
 					i.add_modifier('cmd',
@@ -112,9 +119,14 @@ def main(wf):
 							arg='_cache_fastlane',
 							valid=True)
 
-					i.add_modifier('alt',
+					i.add_modifier('ctrl',
 							subtitle=path_copy,
 							valid=False)
+
+					i.add_modifier('alt',
+							subtitle='Open Fastfile',
+							arg='_open_fastfile, ' + fastfile_path,
+							valid=True)
 
 				with open(cache_path + '/projects/' + hash) as cached_lanes_file:
 
@@ -134,7 +146,7 @@ def main(wf):
 
 					# Is not default
 					i = wf.add_item(title="'" + name + "' lanes:",
-								subtitle='Set as default | Hold ⌘ or ⇧ to cache remote lanes',
+								subtitle='Set as default   |   ⌘ / ⇧ to cache remote lanes   |   ⌥ to open Fastfile',
 								arg='_defaultPath,' + path_copy,
 								valid=True)
 
@@ -148,14 +160,19 @@ def main(wf):
 							arg='_cache_fastlane',
 							valid=True)
 
-					i.add_modifier('alt',
+					i.add_modifier('ctrl',
 							subtitle=path_copy,
 							valid=False)
+
+					i.add_modifier('alt',
+							subtitle='Open Fastfile',
+							arg='_open_fastfile, ' + fastfile_path,
+							valid=True)
 
 				else:
 					# Is default
 					i = wf.add_item(title="'" + name + "' lanes:",
-								subtitle='Hold ⌘ or ⇧ to cache remote lanes',
+								subtitle='Is default path   |   ⌘ / ⇧ to cache remote lanes   |   ⌥ to open Fastfile',
 								valid=False)
 
 					i.add_modifier('cmd',
@@ -168,9 +185,14 @@ def main(wf):
 							arg='_cache_fastlane',
 							valid=True)
 
-					i.add_modifier('alt',
+					i.add_modifier('ctrl',
 							subtitle=path_copy,
 							valid=False)
+
+					i.add_modifier('alt',
+							subtitle='Open Fastfile',
+							arg='_open_fastfile, ' + fastfile_path,
+							valid=True)
 
 		else:
 

@@ -172,6 +172,18 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>87E38EAB-3FE4-48B9-B3C2-D1D098D1C720</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>825DC905-0BE5-42B4-893D-B13ACA0B0EE2</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>49168685-D77D-49FE-8F01-5833BD785ED2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -343,6 +355,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>75418DB1-E891-4884-9F98-F0A0A50C9908</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>87E38EAB-3FE4-48B9-B3C2-D1D098D1C720</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1ECDF3D1-18D7-48F8-93E3-E71D4C7C5445</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -745,6 +770,46 @@ echo -n "Done caching lanes, terminal window can be closed"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>path</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>FED78BE2-47A6-40DC-9FC9-3B1AF2BA555F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>workflowCache</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>F81F1E83-2C50-4C13-8D5C-82E1F7FB2838</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -797,6 +862,26 @@ echo -n "Done caching lanes, terminal window can be closed"</string>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>A999A21A-BA39-4080-A7B7-583083958434</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:path}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>command</key>
+					<string>fastlane lanes</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>0600A1EE-A18D-4586-BDCE-D732A34CA4E0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -948,67 +1033,7 @@ focused=$(osascript ./xcodeFocused.scpt)
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>FED78BE2-47A6-40DC-9FC9-3B1AF2BA555F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>workflowCache</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>F81F1E83-2C50-4C13-8D5C-82E1F7FB2838</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>path</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
 			<string>C21182C9-8AC5-422C-8CA1-844986509A32</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{var:path}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>command</key>
-					<string>fastlane lanes</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>0600A1EE-A18D-4586-BDCE-D732A34CA4E0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1092,6 +1117,38 @@ focused=$(osascript ./xcodeFocused.scpt)
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>1ECDF3D1-18D7-48F8-93E3-E71D4C7C5445</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:split2}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>87E38EAB-3FE4-48B9-B3C2-D1D098D1C720</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>subtext</key>
@@ -1127,25 +1184,22 @@ focused=$(osascript ./xcodeFocused.scpt)
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{var:split2}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>49168685-D77D-49FE-8F01-5833BD785ED2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:split1}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>_open_fastfile</string>
+						<key>outputlabel</key>
+						<string>open fastfile</string>
+						<key>uid</key>
+						<string>825DC905-0BE5-42B4-893D-B13ACA0B0EE2</string>
+					</dict>
 					<dict>
 						<key>inputstring</key>
 						<string>{var:split1}</string>
@@ -1174,6 +1228,23 @@ focused=$(osascript ./xcodeFocused.scpt)
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>E0617BC5-CD12-45A3-9135-7D00448AD904</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>delimiter</key>
 				<string>,</string>
 				<key>trimarguments</key>
@@ -1192,7 +1263,7 @@ focused=$(osascript ./xcodeFocused.scpt)
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string></string>
+				<string>{var:split2}</string>
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
@@ -1201,7 +1272,23 @@ focused=$(osascript ./xcodeFocused.scpt)
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>E0617BC5-CD12-45A3-9135-7D00448AD904</string>
+			<string>49168685-D77D-49FE-8F01-5833BD785ED2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>cd '{var:path}'
+{var:split1}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>540DB786-8CFF-4966-BBD6-3388219C562B</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1232,22 +1319,6 @@ focused=$(osascript ./xcodeFocused.scpt)
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>C7ED5E19-2AEB-41A9-8F37-F8D81DB354F0</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>cd '{var:path}'
-{var:split1}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
-			<key>uid</key>
-			<string>540DB786-8CFF-4966-BBD6-3388219C562B</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1893,15 +1964,15 @@ echo -n $1</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Please refer to: https://github.com/marckrenn/alfred-fastlane</string>
+	<string>Please refer to: https://github.com/marckrenn/alfred-fastlane#readme</string>
 	<key>uidata</key>
 	<dict>
 		<key>0600A1EE-A18D-4586-BDCE-D732A34CA4E0</key>
 		<dict>
 			<key>xpos</key>
-			<integer>990</integer>
+			<integer>980</integer>
 			<key>ypos</key>
-			<integer>275</integer>
+			<integer>240</integer>
 		</dict>
 		<key>09BD27A6-0430-4C20-B5CF-D2A676B8D4DF</key>
 		<dict>
@@ -1916,6 +1987,13 @@ echo -n $1</string>
 			<integer>1475</integer>
 			<key>ypos</key>
 			<integer>960</integer>
+		</dict>
+		<key>1ECDF3D1-18D7-48F8-93E3-E71D4C7C5445</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1350</integer>
+			<key>ypos</key>
+			<integer>490</integer>
 		</dict>
 		<key>200FF017-F509-4D36-8D06-3C3CB74A1865</key>
 		<dict>
@@ -1964,9 +2042,9 @@ echo -n $1</string>
 		<key>49168685-D77D-49FE-8F01-5833BD785ED2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1275</integer>
+			<integer>1270</integer>
 			<key>ypos</key>
-			<integer>570</integer>
+			<integer>580</integer>
 		</dict>
 		<key>496C7728-1870-43D1-A17C-13231EB279CF</key>
 		<dict>
@@ -1982,23 +2060,23 @@ echo -n $1</string>
 			<key>note</key>
 			<string>Apparently required as Terminal Command can't directly access env variables</string>
 			<key>xpos</key>
-			<integer>1120</integer>
+			<integer>1115</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>185</integer>
 		</dict>
 		<key>4D57734B-4729-497B-A4E1-76E12627E563</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1120</integer>
 			<key>ypos</key>
-			<integer>575</integer>
+			<integer>555</integer>
 		</dict>
 		<key>4E090BC9-7092-4100-8EE9-E914DFECA899</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1120</integer>
+			<integer>1115</integer>
 			<key>ypos</key>
-			<integer>400</integer>
+			<integer>395</integer>
 		</dict>
 		<key>50DBDCD5-DB88-4EC5-9AD8-6209B2BE9CD8</key>
 		<dict>
@@ -2012,9 +2090,9 @@ echo -n $1</string>
 		<key>540DB786-8CFF-4966-BBD6-3388219C562B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1705</integer>
+			<integer>1725</integer>
 			<key>ypos</key>
-			<integer>685</integer>
+			<integer>650</integer>
 		</dict>
 		<key>5B5FE6C9-B789-4E1A-A366-04B1CD26EB05</key>
 		<dict>
@@ -2028,7 +2106,7 @@ echo -n $1</string>
 			<key>xpos</key>
 			<integer>1055</integer>
 			<key>ypos</key>
-			<integer>585</integer>
+			<integer>565</integer>
 		</dict>
 		<key>60124C7D-CDD6-46CE-86CA-5868C01626A5</key>
 		<dict>
@@ -2100,9 +2178,9 @@ echo -n $1</string>
 		<key>82C51630-5D1A-4B7D-8F2D-0FA15F9B4724</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1705</integer>
+			<integer>1725</integer>
 			<key>ypos</key>
-			<integer>565</integer>
+			<integer>530</integer>
 		</dict>
 		<key>84C88AB6-8CA5-4E41-AFF2-72DF3CB227F0</key>
 		<dict>
@@ -2111,12 +2189,19 @@ echo -n $1</string>
 			<key>ypos</key>
 			<integer>1495</integer>
 		</dict>
+		<key>87E38EAB-3FE4-48B9-B3C2-D1D098D1C720</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1270</integer>
+			<key>ypos</key>
+			<integer>520</integer>
+		</dict>
 		<key>8DD537E5-A11A-40BA-A956-1C2C3F41C97B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>990</integer>
+			<integer>980</integer>
 			<key>ypos</key>
-			<integer>225</integer>
+			<integer>190</integer>
 		</dict>
 		<key>963A2404-963C-4498-8CCE-EC5EF92B9E97</key>
 		<dict>
@@ -2163,7 +2248,7 @@ echo -n $1</string>
 		<key>C7ED5E19-2AEB-41A9-8F37-F8D81DB354F0</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1360</integer>
+			<integer>1350</integer>
 			<key>ypos</key>
 			<integer>655</integer>
 		</dict>
@@ -2177,9 +2262,9 @@ echo -n $1</string>
 		<key>D5A7E79F-0912-4996-89A9-C722BBE71B42</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1315</integer>
+			<integer>1310</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>185</integer>
 		</dict>
 		<key>D99BAE93-5FDC-499D-97E9-B29C9749BFBC</key>
 		<dict>
@@ -2198,16 +2283,16 @@ echo -n $1</string>
 		<key>E0617BC5-CD12-45A3-9135-7D00448AD904</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1495</integer>
+			<integer>1515</integer>
 			<key>ypos</key>
-			<integer>595</integer>
+			<integer>560</integer>
 		</dict>
 		<key>E45702B0-2AD7-4974-A69F-A22D8E0D4A3D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1555</integer>
+			<integer>1575</integer>
 			<key>ypos</key>
-			<integer>565</integer>
+			<integer>530</integer>
 		</dict>
 		<key>E81F7A46-5130-461A-AE84-66526DE6FA9E</key>
 		<dict>
@@ -2226,9 +2311,9 @@ echo -n $1</string>
 		<key>F81F1E83-2C50-4C13-8D5C-82E1F7FB2838</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1255</integer>
+			<integer>1250</integer>
 			<key>ypos</key>
-			<integer>250</integer>
+			<integer>215</integer>
 		</dict>
 		<key>FED6A627-56B5-4436-8811-6D19E3E519DC</key>
 		<dict>
@@ -2240,9 +2325,9 @@ echo -n $1</string>
 		<key>FED78BE2-47A6-40DC-9FC9-3B1AF2BA555F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1060</integer>
+			<integer>1050</integer>
 			<key>ypos</key>
-			<integer>250</integer>
+			<integer>215</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -2257,7 +2342,7 @@ echo -n $1</string>
 		<string>defaultPath</string>
 	</array>
 	<key>version</key>
-	<string>1.3.0</string>
+	<string>1.4.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/marckrenn/alfred-fastlane</string>
 </dict>
