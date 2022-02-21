@@ -12,15 +12,14 @@ https://user-images.githubusercontent.com/2648540/155036474-2534e50a-7afb-474a-8
 
 
 ### Features
-* ✅ Dynamically scrapes Fastfile
+* ✅ Scrapes lanes from Fastfile
 * ✅ Optional caching for remote lanes
-* ✅ Automatically detects open Xcode project
-* ✅ Default project path
+* ✅ Auto-detects open Xcode project
 * ✅ Fuzzy matching
 * ✅ Supports parameters
 * ✅ In-Alfred settings flow
 
-### Usage
+### Getting started
 * `Toggle Alfred` → type `fl` → select path containing Fastlane folder `↩︎`
 * With lane selected, hold `⌘` to toggle between `bundle exec fastlane [lane]` and `fastlane [lane]`
 * Hold `⌥` or `⇧` to pass parameters to selected lane
