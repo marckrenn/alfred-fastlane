@@ -1,8 +1,10 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/2648540/154934435-18d50287-c69c-4066-8d07-42ef85364478.png" width="300" height="300" />
-</p>
-
-# alfred-fastlane
+ 
+  <table>
+    <tr>
+      <td valign="center"><img src="icon.png" width="128" height="128" /></td>
+      <td valign="center"><h1> alfred-fastlane </h1></td>
+    </tr>
+</table>
 
 Search and execute Fastlane lanes directly from Alfred
 
