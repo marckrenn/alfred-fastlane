@@ -1149,6 +1149,25 @@ focused=$(osascript ./xcodeFocused.scpt)
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>subtext</key>
+				<string>{var:split2} {query}</string>
+				<key>text</key>
+				<string>Add parameter(s)</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E45702B0-2AD7-4974-A69F-A22D8E0D4A3D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -1159,25 +1178,6 @@ focused=$(osascript ./xcodeFocused.scpt)
 			<string>alfred.workflow.action.terminalcommand</string>
 			<key>uid</key>
 			<string>82C51630-5D1A-4B7D-8F2D-0FA15F9B4724</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>subtext</key>
-				<string>{var:split2} {query}</string>
-				<key>text</key>
-				<string>Add argument(s)</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>E45702B0-2AD7-4974-A69F-A22D8E0D4A3D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1245,23 +1245,6 @@ focused=$(osascript ./xcodeFocused.scpt)
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{var:split2}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>49168685-D77D-49FE-8F01-5833BD785ED2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>delimiter</key>
 				<string>,</string>
 				<key>trimarguments</key>
@@ -1273,6 +1256,23 @@ focused=$(osascript ./xcodeFocused.scpt)
 			<string>alfred.workflow.utility.split</string>
 			<key>uid</key>
 			<string>5C9C42B4-8F6E-4B7A-BA50-83965460A441</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:split2}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>49168685-D77D-49FE-8F01-5833BD785ED2</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1441,27 +1441,6 @@ focused=$(osascript ./xcodeFocused.scpt)
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Default project path set to {query}</string>
-				<key>title</key>
-				<string>Fastlane Workflow</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>19714603-63C9-479D-986F-606FD3854CA1</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1482,6 +1461,27 @@ echo -n $1</string>
 			<string>3165FB67-5180-4F45-90B9-C4ED6A0C3FC8</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Default project path set to {query}</string>
+				<key>title</key>
+				<string>Fastlane Workflow</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>19714603-63C9-479D-986F-606FD3854CA1</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1846,6 +1846,27 @@ echo -n $1</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Fastlane keyword set to '{query}'</string>
+				<key>title</key>
+				<string>Fastlane Workflow</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D99BAE93-5FDC-499D-97E9-B29C9749BFBC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1866,27 +1887,6 @@ echo -n $1</string>
 			<string>84C88AB6-8CA5-4E41-AFF2-72DF3CB227F0</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Fastlane keyword set to '{query}'</string>
-				<key>title</key>
-				<string>Fastlane Workflow</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>D99BAE93-5FDC-499D-97E9-B29C9749BFBC</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2343,7 +2343,7 @@ https://github.com/marckrenn/alfred-fastlane#readme</string>
 		<string>defaultPath</string>
 	</array>
 	<key>version</key>
-	<string>1.4.1</string>
+	<string>1.4.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/marckrenn/alfred-fastlane</string>
 </dict>
