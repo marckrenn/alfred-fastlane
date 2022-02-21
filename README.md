@@ -23,7 +23,7 @@
 * Hold `⌥` or `⇧` to pass parameters to selected lane
 * Lanes contained within the `default path` will be shown right after typing `fl`
 * `default path` can either be set via `fl set` or by `'[selected path]' lanes:` `↩︎`
-* The frontmost open Xcode project is automatically used as `default path` (alternatively, press `⌘`+`⇧`+`⌃`+`o` in Xcode)
+* The frontmost open Xcode project is automatically used as `default path` (alternatively, press `⌃⇧⌘O` in Xcode)
 
 ## Acknowledgements:
 
