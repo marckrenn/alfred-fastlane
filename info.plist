@@ -2248,7 +2248,7 @@ echo -n $1</string>
 	<key>variables</key>
 	<dict>
 		<key>defaultPath</key>
-		<string>/Users/marckrenn/Documents/projects/alfies-ios</string>
+		<string></string>
 		<key>keyword</key>
 		<string>fl</string>
 	</dict>
