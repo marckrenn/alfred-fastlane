@@ -81,7 +81,7 @@ def main(wf):
 					# Is not default
 					i = wf.add_item(title="'" + name + "' lanes:",
 								subtitle='Set as default ↩︎ • Re-cache remote lanes ⌘ / ⇧ • Open Fastfile ⌥ • Show path ⌃',
-								arg='_defaultPath,' + path_copy,
+								arg='_default_path,' + path_copy,
 								valid=True)
 
 					i.add_modifier('cmd',
@@ -96,7 +96,8 @@ def main(wf):
 
 					i.add_modifier('ctrl',
 							subtitle=path_copy,
-							valid=False)
+							arg='_open_path, ' + path_copy,
+							valid=True)
 
 					i.add_modifier('alt',
 							subtitle='Open Fastfile',
@@ -121,7 +122,8 @@ def main(wf):
 
 					i.add_modifier('ctrl',
 							subtitle=path_copy,
-							valid=False)
+							arg='_open_path, ' + path_copy,
+							valid=True)
 
 					i.add_modifier('alt',
 							subtitle='Open Fastfile',
@@ -147,7 +149,7 @@ def main(wf):
 					# Is not default
 					i = wf.add_item(title="'" + name + "' lanes:",
 								subtitle='Set as default ↩︎ • Cache remote lanes ⌘ / ⇧ • Open Fastfile ⌥ • Show path ⌃',
-								arg='_defaultPath,' + path_copy,
+								arg='_default_path,' + path_copy,
 								valid=True)
 
 					i.add_modifier('cmd',
@@ -162,7 +164,8 @@ def main(wf):
 
 					i.add_modifier('ctrl',
 							subtitle=path_copy,
-							valid=False)
+							arg='_open_path, ' + path_copy,
+							valid=True)
 
 					i.add_modifier('alt',
 							subtitle='Open Fastfile',
@@ -187,7 +190,8 @@ def main(wf):
 
 					i.add_modifier('ctrl',
 							subtitle=path_copy,
-							valid=False)
+							arg='_open_path, ' + path_copy,
+							valid=True)
 
 					i.add_modifier('alt',
 							subtitle='Open Fastfile',
