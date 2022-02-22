@@ -5,7 +5,7 @@
     </tr>
 </table>
 
-## Search, select and execute Fastlane lanes directly from Alfred
+## Search, select and execute [Fastlane](https://fastlane.tools/) lanes directly from [Alfred](https://www.alfredapp.com/)
 
 
 https://user-images.githubusercontent.com/2648540/155036474-2534e50a-7afb-474a-8d41-0b13bdab1207.mp4
