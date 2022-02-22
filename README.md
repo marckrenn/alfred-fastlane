@@ -5,28 +5,30 @@
     </tr>
 </table>
 
-## Search, select and execute Fastlane lanes directly from Alfred
+## Search, select and execute [Fastlane](https://fastlane.tools/) lanes directly from [Alfred](https://www.alfredapp.com/)
 
 
 https://user-images.githubusercontent.com/2648540/155036474-2534e50a-7afb-474a-8d41-0b13bdab1207.mp4
 
 
 ### Features
-* ✅ Dynamically scrapes Fastfile
+* ✅ Scrapes lanes from Fastfile
 * ✅ Optional caching for remote lanes
-* ✅ Automatically detects open Xcode project
-* ✅ Default project path
+* ✅ Auto-detects open Xcode project
 * ✅ Fuzzy matching
 * ✅ Supports parameters
 * ✅ In-Alfred settings flow
 
-### Usage
+### Getting started
 * `Toggle Alfred` → type `fl` → select path containing Fastlane folder `↩︎`
 * With lane selected, hold `⌘` to toggle between `bundle exec fastlane [lane]` and `fastlane [lane]`
 * Hold `⌥` or `⇧` to pass parameters to selected lane
 * Lanes contained within the `default path` will be shown right after typing `fl`
 * `default path` can either be set via `fl set` or by `'[selected path]' lanes:` `↩︎`
 * The frontmost open Xcode project is automatically used as `default path` (alternatively, press `⌃⇧⌘O` in Xcode)
+
+
+[Thread on alfredforum.com](https://www.alfredforum.com/topic/18016-fastlane-search-select-and-execute-fastlane-lanes/)
 
 ## Acknowledgements:
 
