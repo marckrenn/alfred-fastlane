@@ -27,6 +27,9 @@ https://user-images.githubusercontent.com/2648540/155036474-2534e50a-7afb-474a-8
 * `default path` can either be set via `fl set` or by `'[selected path]' lanes:` `↩︎`
 * The frontmost open Xcode project is automatically used as `default path` (alternatively, press `⌃⇧⌘O` in Xcode)
 
+
+[Thread on alfredforum.com](https://www.alfredforum.com/topic/18016-fastlane-search-select-and-execute-fastlane-lanes/)
+
 ## Acknowledgements:
 
 * [Fastlane](https://github.com/fastlane/fastlane) by [Fastlane team](https://github.com/fastlane/fastlane#fastlane-team) & especially [Felix Krause](https://twitter.com/KrauseFx)
